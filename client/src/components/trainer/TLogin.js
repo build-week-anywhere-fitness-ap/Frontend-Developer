@@ -1,23 +1,23 @@
 import React from "react";
 import React, { useState } from "react";
 
-const CLogin = props => {
-  const [clInfo, setclInfo] = useState({
+const TLogin = props => {
+  const [tlInfo, settlInfo] = useState({
     email: "",
-    password:""
+    password: ""
   });
   const handleChange = event => {
-    setUserInfo({ ...clInfo, [event.target.name]: event.target.value });
+    settlInfo({ ...tlInfo, [event.target.name]: event.target.value });
   };
   const handleSubmit = event => {
     event.preventDefault();
     console.log(handleSubmit);
     let newForm = {
-      ...clInfo,
+      ...tlInfo,
       id: Date.now()
     };
     props.addNewForm(newForm);
-    setclInfo({ email: "", password: "" });
+    settlInfo({ email: "", password: "" });
   };
   return (
     <div className="user-list">
@@ -28,7 +28,7 @@ const CLogin = props => {
           type="email"
           name="email"
           placeholder="email"
-          value={clInfo.email}
+          value={tlInfo.email}
           onChange={handleChange}
         />
         <label htmlFor="password" />
@@ -36,7 +36,7 @@ const CLogin = props => {
         <input
           type="password"
           placeholder="password"
-          value={clInfo.password}
+          value={tlInfo.password}
           onChange={handleChange}
         />
       </form>
@@ -45,4 +45,4 @@ const CLogin = props => {
   );
 };
 
-export default CLogin;
+export default TLogin;
