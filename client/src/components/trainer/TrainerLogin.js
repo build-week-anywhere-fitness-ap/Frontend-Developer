@@ -1,13 +1,13 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import ClientApp from "./ClientApp";
+import TrainerApp from "./TrainerApp";
 import { Route } from "react-router-dom";
 
-class ClientLogin extends React.Component {
+class TrainerLogin extends React.Component {
   state = {
     credentials: {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     }
   };
 
@@ -19,22 +19,24 @@ class ClientLogin extends React.Component {
       }
     });
   };
-
-  // NOTE: double check history.push, could be "/" or "/ClientApp.js"
+  // NOTE: double check history.push, could be "/" or "/TrainerApp.js"
   login = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post('https://bw-anywhere-fitness.herokuapp.com/api/register/', this.state.credentials)
+      .post("http://localhost:5000/api/login", this.state.credentials)
       .then(res => {
-        localStorage.setItem('token', res.data.payload);
-        this.props.history.push('/ClientApp');
+        localStorage.setItem("token", res.data.payload);
+        this.props.history.push("/TrainerApp");
       })
       .catch(err => console.log(err.response));
   };
 
+  // if we were to make this into redux, it would be called as this.props.login
+  // rathen than this.login
+
   render() {
     return (
-      <div>
+      <div className="user-list">
         <form onSubmit={this.login}>
           <input
             type="text"
@@ -49,7 +51,7 @@ class ClientLogin extends React.Component {
             onChange={this.handleChange}
           />
           <button type="submit">
-            <Route path="/ClientApp" component={ClientApp}></Route>
+            <Route path="/TrainerApp" component={TrainerApp}></Route>
           </button>
         </form>
       </div>
@@ -57,27 +59,28 @@ class ClientLogin extends React.Component {
   }
 }
 
-export default ClientLogin;
+export default TrainerLogin;
 
+// import React from "react";
 // import React, { useState } from "react";
 
-// const ClientLogin = props => {
-//   const [clInfo, setclInfo] = useState({
+// const TrainerLogin = props => {
+//   const [tlInfo, settlInfo] = useState({
 //     email: "",
 //     password: ""
 //   });
 //   const handleChange = event => {
-//     setUserInfo({ ...clInfo, [event.target.name]: event.target.value });
+//     settlInfo({ ...tlInfo, [event.target.name]: event.target.value });
 //   };
 //   const handleSubmit = event => {
 //     event.preventDefault();
 //     console.log(handleSubmit);
 //     let newForm = {
-//       ...clInfo,
+//       ...tlInfo,
 //       id: Date.now()
 //     };
 //     props.addNewForm(newForm);
-//     setclInfo({ email: "", password: "" });
+//     settlInfo({ email: "", password: "" });
 //   };
 //   return (
 //     <div className="user-list">
@@ -88,7 +91,7 @@ export default ClientLogin;
 //           type="email"
 //           name="email"
 //           placeholder="email"
-//           value={clInfo.email}
+//           value={tlInfo.email}
 //           onChange={handleChange}
 //         />
 //         <label htmlFor="password" />
@@ -96,17 +99,17 @@ export default ClientLogin;
 //         <input
 //           type="password"
 //           placeholder="password"
-//           value={clInfo.password}
+//           value={tlInfo.password}
 //           onChange={handleChange}
 //         />
 //       </form>
 //       <button type="submit">
-//         <Route path="/TrainerClassList" component={TrainerClassList}>
-//           >Enter
+//         <Route path="/CreateAWorkout" component={CreateAWorkout}>
+//           Enter
 //         </Route>
 //       </button>
 //     </div>
 //   );
 // };
 
-// export default ClientLogin;
+// export default TrainerLogin;
