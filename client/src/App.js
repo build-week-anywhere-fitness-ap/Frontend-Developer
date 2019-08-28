@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import ClientLogin from "./components/client/ClientLogin";
 import TrainerLogin from "./components/trainer/TrainerLogin";
 import SignUp from "./components/SignUp";
+import PrivateRoute from './utils/PrivateRoute';
 
 function App() {
   return (
