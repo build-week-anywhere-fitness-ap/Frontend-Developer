@@ -4,6 +4,9 @@ import { Route, Switch } from "react-router-dom";
 import ClientLogin from "./components/client/ClientLogin";
 import TrainerLogin from "./components/trainer/TrainerLogin";
 import SignUp from "./components/SignUp";
+import PrivateRoute from "./utils/PrivateRoute"
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import ClientApp from'./components/client/ClientApp';
 
 function App() {
   return (
@@ -36,6 +39,34 @@ function App() {
       </Switch>
     <PrivateRoute exact path="/protected" component={ClientLogin} />
     <PrivateRoute exact path="/protected" component={TrainerLogin} />
+
+
+    <Router>
+      <div className="App">
+        <ul>
+          <li>
+            <Link to="/ClientLogin">Client Login</Link>
+          </li>
+          <li>
+            <Link to="/protected">Protected Page</Link>
+          </li>
+        </ul>
+        <Route path="/ClientLogin" component={ClientLogin} />
+        <PrivateRoute exact path="/protected" component={ClientApp} />
+        <ul>
+          <li>
+            <Link to="/TrainerLogin">Trainer Login</Link>
+          </li>
+          <li>
+            <Link to="/protected">Protected Page</Link>
+          </li>
+        </ul>
+        <Route path="/TrainerLogin" component={TrainerLogin} />
+        <PrivateRoute exact path="/protected" component={TrainerApp} />
+      </div>
+    </Router>
+
+
     </div>
   );
 }
