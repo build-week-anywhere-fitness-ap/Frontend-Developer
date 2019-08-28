@@ -6,8 +6,8 @@ import { Route } from "react-router-dom";
 class ClientLogin extends React.Component {
   state = {
     credentials: {
-      username: "",
-      password: ""
+      username: '',
+      password: ''
     }
   };
 
@@ -24,10 +24,10 @@ class ClientLogin extends React.Component {
   login = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post("http://localhost:5000/api/login", this.state.credentials)
+      .post('https://bw-anywhere-fitness.herokuapp.com/api/register/', this.state.credentials)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/ClientApp");
+        localStorage.setItem('token', res.data.payload);
+        this.props.history.push('/ClientApp');
       })
       .catch(err => console.log(err.response));
   };

@@ -34,6 +34,8 @@ function App() {
           </button>
         </div>
       </Switch>
+    <PrivateRoute exact path="/protected" component={ClientLogin} />
+    <PrivateRoute exact path="/protected" component={TrainerLogin} />
     </div>
   );
 }
