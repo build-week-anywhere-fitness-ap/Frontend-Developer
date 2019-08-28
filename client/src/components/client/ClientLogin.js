@@ -1,5 +1,5 @@
 import React from "react";
-import axiosWithAuth from "../utils/axiosWithAuth";
+import axiosWithAuth from "../../utils/axiosWithAuth";
 import ClientApp from "./ClientApp";
 import { Route } from "react-router-dom";
 
