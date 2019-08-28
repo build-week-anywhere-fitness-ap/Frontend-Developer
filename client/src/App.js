@@ -3,10 +3,11 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import ClientLogin from "./components/client/ClientLogin";
 import TrainerLogin from "./components/trainer/TrainerLogin";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp/SignUp";
 import PrivateRoute from "./utils/PrivateRoute"
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ClientApp from'./components/client/ClientApp';
+import TrainerApp from './components/trainer/TrainerApp'
 
 function App() {
   return (
