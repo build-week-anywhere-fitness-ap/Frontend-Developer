@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TrainerForm = props => {
+const CreateAWorkout = props => {
   const [trainerInfo, setTrainerInfo] = useState({
     name: "",
     email: "",
@@ -29,6 +29,7 @@ const TrainerForm = props => {
   };
   return (
     <div className="user-list">
+      <h1></h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name" />
         Name:
@@ -56,18 +57,23 @@ const TrainerForm = props => {
           onChange={handleChange}
         />
         <label htmlFor="difficulty" />
-        <textarea
-          name="body"
-          placeholder="Type your note here"
-          value={trainerInfo.body}
+        Difficulty:
+        <input
+          type="checkbox"
+          placeholder="difficulty"
+          value={trainerInfo.difficulty}
           onChange={handleChange}
-        >
-          hey
-        </textarea>
+        />
+        <textarea
+          name="description"
+          placeholder="Type your description here"
+          value={userInfo.description}
+          onChange={handleChange}
+        ></textarea>
       </form>
-      <button type="submit">Edit</button>
+      <button type="submit">Add Workout</button>
     </div>
   );
 };
 
-export default Form;
+export default CreateAWorkout;

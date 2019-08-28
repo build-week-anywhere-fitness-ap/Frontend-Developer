@@ -21,6 +21,7 @@ const SignUp = props => {
   };
   return (
     <div className="user-list">
+      <h1>Create A Workout</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name" />
         Name:
