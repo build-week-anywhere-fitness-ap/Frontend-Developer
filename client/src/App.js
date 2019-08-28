@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import ClientLogin from "./components/client/ClientLogin";
 import TrainerLogin from "./components/trainer/TrainerLogin";
 import SignUp from "./components/SignUp/SignUp";
@@ -20,10 +20,13 @@ function App() {
       <div>
         <Link path="/SignUp">Sign Up</Link>
       </div>
-      <Route path="/ClientLogin" component={ClientLogin} />
-      <Route path="/TrainerLogin" component={TrainerLogin} />
-      <PrivateRoute exact path="/protected" component={ClientApp} />
-      <PrivateRoute exact path="/protected" component={TrainerApp} />
+      <Switch>
+        <Route exact path="/ClientLogin" component={ClientLogin} />
+        <Route exact path="/TrainerLogin" component={TrainerLogin} />
+        <Route exact path="/SignUp" component={SignUp} />
+        <PrivateRoute exact path="/protected" component={ClientApp} />
+        <PrivateRoute exact path="/protected" component={TrainerApp} />
+      </Switch>
     </div>
   );
 }
