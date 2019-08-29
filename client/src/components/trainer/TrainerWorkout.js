@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const TrainerWorkout = props => {
-  const [workout, setWorkout] = useState();
+  const [workout, setWorkout] = useState("");
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -20,21 +20,40 @@ const TrainerWorkout = props => {
     return <div>Loading workout information...</div>;
   }
 
-  const { title, instructor, description } = workout;
+  const {
+    name,
+    email,
+    role,
+    difficult,
+    intermediate,
+    beginner,
+    description
+  } = workout;
   return (
     <div className="save-wrapper">
       <div className="workout-card">
-        <h2>{title}</h2>
+        Workout:
         <div className="workout-instructor">
-          Director: <em>{instructor}</em>
+          Instructor: <em>{workout.name}</em>
         </div>
         <div className="workout-difficult">
-          Difficulty: <strong>{difficulty}</strong>
+          <strong>{workout.difficult}</strong>
+          <strong>{workout.intermediate}</strong>
+          <strong>{workout.beginner}</strong>
         </div>
         <div>
           <h3>Description</h3>
-          <p>{description}</p>
+          <p>{workout.description}</p>
         </div>
+      </div>
+      <div
+        onClick={event => {
+          event.preventDefault();
+          props.addToSavedList(workout);
+        }}
+        className="save-button"
+      >
+        Save
       </div>
     </div>
   );

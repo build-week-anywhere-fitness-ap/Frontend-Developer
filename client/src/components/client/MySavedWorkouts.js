@@ -9,8 +9,8 @@ const MySavedWorkouts = props => {
         <span className="saved-workout">{workout.title}</span>
       ))}
       <div className="home-button">
-        <Link to="/ClientApp" component="ClientApp">
-          Home
+        <Link to="/ClientApp">
+          <button>Home</button>
         </Link>
       </div>
     </div>

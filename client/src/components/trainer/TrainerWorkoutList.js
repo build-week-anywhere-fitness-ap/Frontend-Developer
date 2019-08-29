@@ -2,8 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const trainers = [
+  {
+    Name: "Tony",
+    Email: "Tony@tony.tony",
+    Role: "Cross Fit Trainer",
+    Difficult: "true",
+    Intermediate: "false",
+    Begginer: "false",
+    Description: "Let's Burn Some Calories"
+  }
+];
+
 const TrainerWorkoutList = props => {
-  const [workout, setWorkout] = useState([]);
+  const [workout, setWorkout] = useState([trainers]);
   useEffect(() => {
     const getWorkout = () => {
       axios
@@ -18,27 +30,27 @@ const TrainerWorkoutList = props => {
 
     getWorkout();
   }, []);
-
   return (
     <div className="workout-list">
       {workout.map(workout => (
-        <ClassDetails key={workout} />
+        <WorkoutDetails key={workout} />
       ))}
     </div>
   );
 };
 
 function WorkoutDetails({ workout }) {
-  const { title, instructor, difficulty, description } = workout;
+  const { name, difficult, intermediate, beginner, description } = workout;
   return (
     <div className="workout-card">
-      <h2>{title}</h2>
       <Link to={`/TrainerWorkoutList/${workout}`} />
       <div className="workout-instructor">
-       Instructor: <em>{instructor}</em>
+        Instructor: <em>{name}</em>
       </div>
       <div className="workout-difficulty">
-        Difficulty: <strong>{difficulty}</strong>
+        <strong>{difficult}</strong>
+        <strong>{intermediate}</strong>
+        <strong>{beginner}</strong>
       </div>
       <div>
         <h3>Description</h3>
