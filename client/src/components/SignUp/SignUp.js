@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { signUpUser } from '../../actions/index'
+import { connect } from 'react-redux'
 
 const SignUp = props => {
   const [userInfo, setUserInfo] = useState({
@@ -12,6 +14,7 @@ const SignUp = props => {
   const handleSubmit = event => {
     event.preventDefault();
     console.log(handleSubmit);
+    props.signUpUser(userInfo)
     let newForm = {
       ...userInfo,
       id: Date.now()
@@ -54,4 +57,8 @@ const SignUp = props => {
   );
 };
 
-export default SignUp;
+function mapsStatetoProps(state) {
+  return {}
+} 
+
+export default connect(mapsStatetoProps,{signUpUser}) (SignUp);

@@ -1,4 +1,4 @@
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import axiosWithAuth from "../utils/axiosWithAuth";
 import cookie from "react-cookies";
 
 export const REGISTER_START = "REGISTER_START";
@@ -124,6 +124,39 @@ export const getClassByInstructor = classId => dispatch => {
       });
     });
 };
+
+export const SIGNUP_START = "SIGNUP_START";
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
+export const signUpUser = credentials => dispatch => {
+  dispatch({ type: SIGNUP_START });
+  axiosWithAuth()
+    .post('https://bw-anywhere-fitness.herokuapp.com/api/register/', credentials)
+    .then(res => {
+      dispatch({
+        type: SIGNUP_SUCCESS,
+        payload: res.data
+      });
+
+    })
+    .catch(err => {
+      dispatch({
+        type: SIGNUP_FAILURE,
+        payload: err.response.data
+      });
+    });
+};
+
+// login = e => {
+//   e.preventDefault();
+//   axiosWithAuth()
+//     .post('https://bw-anywhere-fitness.herokuapp.com/api/register/', this.state.credentials)
+//     .then(res => {
+//       localStorage.setItem('token', res.data.payload);
+//       this.props.history.push('/TrainerApp');
+//     })
+//     .catch(err => console.log(err.response));
+// };
 
 export const UPDATE_INSTRUCTOR_CLASS_START = "UPDATE_INSTRUCTOR_CLASS_START";
 export const UPDATE_INSTRUCTOR_CLASS_SUCCESS =

@@ -18,6 +18,11 @@ function App() {
       <Switch>
         <div className="Options">
           <button>
+            <Route path="/SignUp" component={SignUp}>
+              Sign Up
+            </Route>
+          </button>
+          <button>
             <Route path="/ClientLogin" component={ClientLogin}>
               Client Log In
             </Route>
@@ -31,11 +36,7 @@ function App() {
           </button>
         </div>
         <div>
-          <button>
-            <Route path="/SignUp" component={SignUp}>
-              Sign Up
-            </Route>
-          </button>
+
         </div>
       </Switch>
     <PrivateRoute exact path="/protected" component={ClientLogin} />
