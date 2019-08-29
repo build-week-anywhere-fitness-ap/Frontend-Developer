@@ -1,5 +1,5 @@
 import React from "react";
-import axiosWithAuth from "../../utils/axiosWithAuth";
+import axiosWithAuth from '../../utils/axiosWithAuth';
 import TrainerApp from "./TrainerApp";
 import { Route } from "react-router-dom";
 
