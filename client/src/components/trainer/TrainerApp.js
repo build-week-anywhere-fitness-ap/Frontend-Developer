@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import MyWorkouts from "../trainer/MyWorkouts";
-// import AvailableWorkouts from "../client/AvailableWorkouts";
-// import CreateAWorkout from "./CreateAWorkout";
 
 const TrainerApp = () => {
   return (

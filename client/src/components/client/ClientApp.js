@@ -1,6 +1,6 @@
 //nav for client to go to saved workouts and a nav link to go to trainer workout list
 import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import MySavedWorkouts from "./MySavedWorkouts";
 import AvailableWorkouts from "./AvailableWorkouts";
 
@@ -10,14 +10,10 @@ const ClientApp = () => {
       <h1>Start Your Workout Here:</h1>
       <ul>
         <li>
-          <NavLink to="/MySavedWorkouts" activeClassName="activeNavButton">
-            My Saved Workouts
-          </NavLink>
+          <Link to="/MySavedWorkouts">My Saved Workouts</Link>
         </li>
         <li>
-          <NavLink to="/AvailableWorkouts" activeClassName="activeNavButton">
-            Available Workouts
-          </NavLink>
+          <Link to="/AvailableWorkouts">Available Workouts</Link>
         </li>
       </ul>
       <Route exact path="MySavedWorkouts" component={MySavedWorkouts} />
