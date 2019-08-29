@@ -43,6 +43,10 @@
         padding: 25px;
     }
     
-    button: .login-header {
+    .button:hover {
+        opacity: 1
+    }
+    
+    .login-header {
         color: orangered;
     }
