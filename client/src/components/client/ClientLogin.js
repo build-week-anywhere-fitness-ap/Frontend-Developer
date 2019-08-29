@@ -40,8 +40,9 @@ class ClientLogin extends React.Component {
       <div className="login-header">
         <h1>Client Login</h1>
         <Route path="/ClientApp" component={ClientApp}></Route>
-        <form onSubmit={this.login}>
+        <form className="form-flex" onSubmit={this.login}>
           <input
+            className="form-style"
             type="text"
             name="username"
             placeholder="Username"
@@ -49,6 +50,7 @@ class ClientLogin extends React.Component {
             onChange={this.handleChange}
           />
           <input
+            className="form-style"
             type="password"
             name="password"
             placeholder="Password"
@@ -56,7 +58,7 @@ class ClientLogin extends React.Component {
             onChange={this.handleChange}
           />
           <Link to="/ClientApp">
-            <button type="submit">Submit</button>
+            <button type="submit">Enter</button>
           </Link>
         </form>
       </div>
