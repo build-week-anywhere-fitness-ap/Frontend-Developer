@@ -7,12 +7,19 @@ import AvailableWorkouts from "../client/AvailableWorkouts";
 const TrainerApp = () => {
   return (
     <div>
-      <NavLink to="/MyWorkouts" component={MyWorkouts}>
-        My Workouts
-      </NavLink>
-      <NavLink to="/AvailableWorkouts" component={AvailableWorkouts}>
-        Available Workouts
-      </NavLink>
+      <ul className="navbar">
+        <h1>Start Here:</h1>
+        <li>
+          <NavLink exact to="/MyWorkouts" component={MyWorkouts}>
+            My Workouts
+          </NavLink>
+        </li>
+        <li>
+          <NavLink exact to="/AvailableWorkouts" component={AvailableWorkouts}>
+            Available Workouts
+          </NavLink>
+        </li>
+      </ul>
     </div>
   );
 };

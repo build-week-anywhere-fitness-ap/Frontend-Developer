@@ -1,7 +1,7 @@
 import React from "react";
 import axiosWithAuth from "../../utils/axiosWithAuth";
 import TrainerApp from "./TrainerApp";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 class TrainerLogin extends React.Component {
   state = {
@@ -36,23 +36,27 @@ class TrainerLogin extends React.Component {
 
   render() {
     return (
-      <div className="user-list">
+      <div className="login-header">
+        <h1>Trainer Login</h1>
+        <Route exact path="/TrainerApp" component={TrainerApp}></Route>
         <form onSubmit={this.login}>
           <input
             type="text"
             name="username"
+            placeholder="Username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
           <input
             type="password"
             name="password"
+            placeholder="Password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <button type="submit">
-            <Route path="/TrainerApp" component={TrainerApp}></Route>
-          </button>
+          <Link to="/TrainerApp">
+            <button type="submit">Submit</button>
+          </Link>
         </form>
       </div>
     );
