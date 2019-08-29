@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ClientApp from'./components/client/ClientApp';
 import TrainerApp from './components/trainer/TrainerApp'
 
+
 function App() {
   return (
     <div className="App">
