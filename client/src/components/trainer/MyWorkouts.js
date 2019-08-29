@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MySavedWorkouts = props => {
+const MyWorkouts = props => {
   return (
     <div className="saved-workouts">
       <h3>Saved Movies:</h3>
@@ -17,4 +17,4 @@ const MySavedWorkouts = props => {
   );
 };
 
-export default MySavedWorkouts;
+export default MyWorkouts;

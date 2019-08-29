@@ -1,11 +1,13 @@
-import React from 'react';
-import axiosWithAuth from '../../utils/axiosWithAuth';
+import React from "react";
+import axiosWithAuth from "../../utils/axiosWithAuth";
+import TrainerApp from "./TrainerApp";
+import { Route, Link } from "react-router-dom";
 
 class TrainerLogin extends React.Component {
   state = {
     credentials: {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     }
   };
 
@@ -17,17 +19,19 @@ class TrainerLogin extends React.Component {
       }
     });
   };
-// NOTE: double check history.push, could be "/" or "/TrainerApp.js"
-// NOTE: We have a register and a login endpoin. How/where do i use both?
-
+  // NOTE: double check history.push, could be "/" or "/TrainerApp.js"
+  // NOTE: We have a register and a login endpoin. How/where do i use both?
 
   login = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post('https://bw-anywhere-fitness.herokuapp.com/api/register/', this.state.credentials)
+      .post(
+        "https://bw-anywhere-fitness.herokuapp.com/api/register/",
+        this.state.credentials
+      )
       .then(res => {
-        localStorage.setItem('token', res.data.payload);
-        this.props.history.push('/TrainerApp');
+        localStorage.setItem("token", res.data.payload);
+        this.props.history.push("/TrainerApp");
       })
       .catch(err => console.log(err.response));
   };
@@ -37,21 +41,27 @@ class TrainerLogin extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
+      <div className="login-header">
+        <h1>Trainer Login</h1>
+        <Route path="/TrainerApp" component={TrainerApp}></Route>
+        <form className="form-flex" onSubmit={this.login}>
           <input
+            className="form-style"
             type="text"
             name="username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
           <input
+            className="form-style"
             type="password"
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <button>Log in</button>
+          <Link to="/TrainertApp">
+            <button type="submit">Enter</button>
+          </Link>
         </form>
       </div>
     );

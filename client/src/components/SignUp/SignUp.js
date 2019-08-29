@@ -20,8 +20,8 @@ const SignUp = props => {
     setUserInfo({ name: "", email: "", role: "" });
   };
   return (
-    <div className="user-list">
-      <h1>Create A Workout</h1>
+    <div className="login-header">
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name" />
         Name:
@@ -41,13 +41,10 @@ const SignUp = props => {
           onChange={handleChange}
         />
         <label htmlFor="role" />
-        Role:
-        <input
-          type="checkbox"
-          placeholder="role"
-          value={userInfo.role}
-          onChange={handleChange}
-        />
+        Client:
+        <input type="checkbox" value={userInfo.role} onChange={handleChange} />
+        Trainer:
+        <input type="checkbox" value={userInfo.role} onChange={handleChange} />
       </form>
       <button type="submit">Submit</button>
     </div>
