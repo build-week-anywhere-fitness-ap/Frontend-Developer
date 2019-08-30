@@ -1,3 +1,83 @@
+
+            body {
+                display: flex;
+                justify-content: center;
+                background-image: url("components/anywherefitnessphoto.jpg");
+                background-color: #cccccc;
+                height: 500px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            .App {
+                width: 550px;
+                text-align: center;
+                background-image: linear-gradient(to bottom right, #7be5ff, #0b6e86);
+                border-radius: 7px;
+                margin-top: 95px;
+                padding-bottom: 65px;
+            }
+            
+            .App-header {
+                background-image: linear-gradient(to bottom right, rgb(252, 196, 94), orange);
+                border-radius: 7px;
+                width: 550px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 7px;
+                font-size: calc(15px + 2vmin);
+                color: white;
+                text-shadow: 1px 1px slategrey;
+            }
+            
+            .App-header p {
+                padding: 15px;
+            }
+            
+            .options {
+                width: 450px;
+                height: 100vh;
+            }
+            
+            button {
+                background-color: orange;
+                font-size: calc(10px + 2vmin);
+                color: white;
+                width: 250px;
+                border-radius: 7px;
+                padding: 25px;
+                margin-top: 7px;
+            }
+            
+            button:hover {
+                opacity: .5;
+            }
+            
+            .login-header {
+                color: orange;
+                text-shadow: 2px 2px slategray;
+            }
+            
+            .form-flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .form-style {
+                width: 250px;
+                height: 50px;
+                border-radius: 4px;
+                margin: 7px;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
                 body {
                     display: flex;
                     justify-content: center;
@@ -146,3 +226,4 @@
                     padding: 5px;
                     margin: 10px;
                 }
+

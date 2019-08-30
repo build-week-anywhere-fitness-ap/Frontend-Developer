@@ -3,6 +3,18 @@ import { Link } from "react-router-dom";
 
 const MySavedWorkouts = props => {
   return (
+
+    <div className="saved-workouts">
+      <h3>Saved Movies:</h3>
+      {props.workouts.map(workout => (
+        <span className="saved-workout">{workout.title}</span>
+      ))}
+      <div className="home-button">
+        <Link to="/ClientApp" component="ClientApp">
+          Home
+        </Link>
+      </div>
+
     <div className="navbar">
       <h1>My Saved Workouts:</h1>
       <div className="workoutcard-flex">
@@ -31,6 +43,7 @@ const MySavedWorkouts = props => {
       <Link to="/ClientApp">
         <button>Home</button>
       </Link>
+
     </div>
   );
 };

@@ -1,5 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+
+const MyWorkouts = props => {
+  return (
+    <div className="saved-workouts">
+      <h3>Saved Movies:</h3>
+      {props.workouts.map(workout => (
+        <span className="saved-workout">{workout.title}</span>
+      ))}
+      <div className="home-button">
+        <Link to="/ClientApp" component="ClientApp">
+          Home
+        </Link>
+      </div>
+
 import TrainerApp from "./TrainerApp";
 
 const MyWorkouts = props => {
@@ -37,6 +52,7 @@ const MyWorkouts = props => {
       <Link to="/TrainerApp">
         <button>Home</button>
       </Link>
+
     </div>
   );
 };

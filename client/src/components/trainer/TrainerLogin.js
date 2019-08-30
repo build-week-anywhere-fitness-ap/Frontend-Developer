@@ -20,16 +20,16 @@ class TrainerLogin extends React.Component {
     });
   };
   // NOTE: double check history.push, could be "/" or "/TrainerApp.js"
-  login = e => {
-    e.preventDefault();
-    axiosWithAuth()
-      .post("http://localhost:5000/api/login", this.state.credentials)
-      .then(res => {
-        localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/TrainerApp");
-      })
-      .catch(err => console.log(err.response));
-  };
+  // login = e => {
+  //   e.preventDefault();
+  //   axiosWithAuth()
+  //     .post("http://localhost:5000/api/login", this.state.credentials)
+  //     .then(res => {
+  //       localStorage.setItem("token", res.data.payload);
+  //       this.props.history.push("/TrainerApp");
+  //     })
+  //     .catch(err => console.log(err.response));
+  // };
 
   // if we were to make this into redux, it would be called as this.props.login
   // rathen than this.login
@@ -39,7 +39,11 @@ class TrainerLogin extends React.Component {
       <div className="login-header">
         <h1>Trainer Login</h1>
         <Route exact path="/TrainerApp" component={TrainerApp}></Route>
+
+        <form onSubmit={this.login}>
+
         <form className="form-flex" onSubmit={this.login}>
+
           <input
             className="form-style"
             type="text"
