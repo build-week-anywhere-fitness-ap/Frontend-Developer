@@ -1,18 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TrainerApp from "./TrainerApp";
 
 const MyWorkouts = props => {
   return (
-    <div className="saved-workouts">
-      <h3>Saved Workouts:</h3>
-      {props.workouts.map(workout => (
-        <span className="saved-workout">{workout.title}</span>
-      ))}
-      <div className="home-button">
-        <Link to="/TrainerApp">
-          <button>Home</button>
-        </Link>
-      </div>
+    <div>
+      <h1 className="navbar">My Workouts</h1>
+      {/* <div className="saved-workouts">
+        {props.workout.map(workout => (
+          <span className="saved-workout">{workout.title}</span>
+        ))}
+      </div>  */}
+      <Link to="/TrainerApp">
+        <button>Home</button>
+      </Link>
     </div>
   );
 };

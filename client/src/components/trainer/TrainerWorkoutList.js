@@ -9,7 +9,7 @@ const trainers = [
     Role: "Cross Fit Trainer",
     Difficult: "true",
     Intermediate: "false",
-    Begginer: "false",
+    Beginner: "false",
     Description: "Let's Burn Some Calories"
   }
 ];

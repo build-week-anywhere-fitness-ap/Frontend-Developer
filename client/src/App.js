@@ -11,9 +11,7 @@ import Homepage from "./components/Homepage";
 import CreateAWorkout from "./components/trainer/CreateAWorkout";
 import MyWorkouts from "./components/trainer/MyWorkouts";
 import AvailableWorkouts from "./components/client/AvailableWorkouts";
-
-// import AvailableWorkouts from "../client/AvailableWorkouts";
-// import CreateAWorkout from "./CreateAWorkout";
+import MySavedWorkouts from "./components/client/MySavedWorkouts";
 
 function App() {
   return (
@@ -33,6 +31,7 @@ function App() {
         <Route exact path="/TrainerApp" component={TrainerApp} />
         <Route exact path="/AvailableWorkouts" component={AvailableWorkouts} />
         <Route exact path="/ClientApp" component={ClientApp} />
+        <Route exact path="/MySavedWorkouts" component={MySavedWorkouts} />
       </Switch>
     </div>
   );
