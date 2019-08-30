@@ -36,14 +36,19 @@ const SignUp = props => {
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name" />
+
         First Name:
+
+
         <input
+          className="form-style"
           type="text"
           name="firstName"
           placeholder="First Name"
           value={userInfo.firstName}
           onChange={handleChange}
         />
+
         <label htmlFor="firstName" />
         Last Name:
         <input
@@ -69,6 +74,33 @@ const SignUp = props => {
           name="password"
           placeholder="password"
           value={userInfo.password}
+
+        <br />
+        <label htmlFor="email" />
+        <input
+          className="form-style"
+          type="email"
+          name="email"
+          placeholder="email"
+          value={userInfo.email}
+          onChange={handleChange}
+        />
+        <br />
+        <label htmlFor="role" />
+        <h2>Trainer:</h2>
+        <input
+          className="check"
+          name="role"
+          type="checkbox"
+          value={userInfo.role}
+          onChange={handleChange}
+        />
+        <h2>Client:</h2>
+        <input
+          className="check"
+          type="checkbox"
+          value={userInfo.role}
+
           onChange={handleChange}
         />
         <label htmlFor="password" />

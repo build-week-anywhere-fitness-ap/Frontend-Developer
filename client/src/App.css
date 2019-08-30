@@ -1,3 +1,4 @@
+
             body {
                 display: flex;
                 justify-content: center;
@@ -76,3 +77,153 @@
                 font-size: 1.5rem;
                 text-align: center;
             }
+
+                body {
+                    display: flex;
+                    justify-content: center;
+                    background-image: url("components/anywherefitnessphoto.jpg");
+                    background-color: #cccccc;
+                    height: 500px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                
+                .App {
+                    width: 470px;
+                    text-align: center;
+                    background-image: linear-gradient(to bottom right, rgb(123, 229, 255, 0.7), rgb(11, 110, 134, 0.7));
+                    margin-top: 95px;
+                    padding-bottom: 65px;
+                    box-shadow: 1px 1px slategrey;
+                }
+                
+                .App-header {
+                    background-image: linear-gradient(to bottom right, rgb(252, 196, 94), orange);
+                    width: 470px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: calc(15px + 2vmin);
+                    color: white;
+                    text-shadow: 1px 1px slategrey;
+                }
+                
+                .App-header p {
+                    padding: 15px;
+                }
+                
+                .options {
+                    width: 450px;
+                    height: 100vh;
+                }
+                
+                button {
+                    background-color: orange;
+                    font-size: calc(10px + 2vmin);
+                    color: white;
+                    width: 250px;
+                    border-radius: 7px;
+                    padding: 25px;
+                    margin-top: 7px;
+                }
+                
+                button:hover {
+                    opacity: .5;
+                }
+                
+                .login-header {
+                    color: orange;
+                    text-shadow: 2px 2px slategray;
+                }
+                
+                .form-flex {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .form-style {
+                    width: 250px;
+                    height: 50px;
+                    border-radius: 4px;
+                    margin: 7px;
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+                
+                .check {
+                    width: 35px;
+                    height: 35px;
+                }
+                
+                .saved-workouts {
+                    width: 350px;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                .home-button {
+                    background-color: orange;
+                    font-size: calc(10px + 2vmin);
+                    color: white;
+                    width: 250px;
+                    border-radius: 7px;
+                    padding: 25px;
+                    margin-top: 7px;
+                }
+                
+                .saved-workout {
+                    width: 200px;
+                    height: 300px;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+                
+                .navbar {
+                    width: 400px;
+                    margin: 0 auto;
+                }
+                
+                .navbar h1 {
+                    padding: 5px;
+                    font-size: 1.7rem;
+                    text-align: center;
+                    color: orange;
+                    text-shadow: 2px 2px slategray;
+                    text-decoration: none;
+                }
+                
+                .navbar li {
+                    font-size: 1.6rem;
+                    text-align: center;
+                    list-style-type: none;
+                    color: white;
+                    text-decoration: none;
+                    border-bottom: none;
+                }
+                
+                .workoutcard-flex {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+                
+                .workout-card {
+                    padding: 10px;
+                    width: 200px;
+                    height: 250px;
+                    border: 1px solid orange;
+                    background: rgba(255, 255, 255, 0.363);
+                    border-radius: 7px;
+                    padding: 5px;
+                    margin: 10px;
+                }
+

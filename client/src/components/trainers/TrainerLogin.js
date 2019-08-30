@@ -49,17 +49,27 @@ class TrainerLogin extends React.Component {
             className="form-style"
             type="text"
             name="username"
+            placeholder="Username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
           <input
+
             className="form-style"
+
+            className="form-styles"
+
             type="password"
             name="password"
+            placeholder="Password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
+
           <Link to="/TrainertApp">
+
+          <Link to="/TrainerApp">
+
             <button type="submit">Enter</button>
           </Link>
         </form>
