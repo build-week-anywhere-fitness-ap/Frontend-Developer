@@ -24,27 +24,41 @@ const SignUp = props => {
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name" />
-        Name:
         <input
+          className="form-style"
           type="text"
           name="name"
           placeholder="name"
           value={userInfo.name}
           onChange={handleChange}
         />
+        <br />
         <label htmlFor="email" />
-        Email:
         <input
+          className="form-style"
           type="email"
+          name="email"
           placeholder="email"
           value={userInfo.email}
           onChange={handleChange}
         />
+        <br />
         <label htmlFor="role" />
-        Client:
-        <input type="checkbox" value={userInfo.role} onChange={handleChange} />
-        Trainer:
-        <input type="checkbox" value={userInfo.role} onChange={handleChange} />
+        <h2>Trainer:</h2>
+        <input
+          className="check"
+          name="role"
+          type="checkbox"
+          value={userInfo.role}
+          onChange={handleChange}
+        />
+        <h2>Client:</h2>
+        <input
+          className="check"
+          type="checkbox"
+          value={userInfo.role}
+          onChange={handleChange}
+        />
       </form>
       <button type="submit">Submit</button>
     </div>

@@ -39,8 +39,9 @@ class TrainerLogin extends React.Component {
       <div className="login-header">
         <h1>Trainer Login</h1>
         <Route exact path="/TrainerApp" component={TrainerApp}></Route>
-        <form onSubmit={this.login}>
+        <form className="form-flex" onSubmit={this.login}>
           <input
+            className="form-style"
             type="text"
             name="username"
             placeholder="Username"
@@ -48,6 +49,7 @@ class TrainerLogin extends React.Component {
             onChange={this.handleChange}
           />
           <input
+            className="form-style"
             type="password"
             name="password"
             placeholder="Password"
